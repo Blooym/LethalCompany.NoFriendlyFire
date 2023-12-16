@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net472</TargetFramework>
         <AssemblyName>NoFriendlyFire</AssemblyName>
-        <Description>Disables the ability for teammates to damage eachother.</Description>
+        <Description>Disables the ability for teammates to damage each-other.</Description>
         <Version>1.0.0</Version>
         <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
         <LangVersion>latest</LangVersion>

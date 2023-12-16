@@ -1,0 +1,9 @@
+﻿{
+  "name": "NoFriendlyFire",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/Blooym/LethalCompany.NoFriendlyFire",
+  "description": "Disables the ability for teammates to damage each-other while keeping all reliant mechanics working.",
+  "dependencies": [
+    "BepInEx-BepInExPack-5.4.2100"
+  ]
+}
