@@ -1,0 +1,10 @@
+﻿# Library files.
+lib/**
+!lib/.gitkeep
+
+# Build Files
+obj/
+bin/
+
+# IDE
+.idea/
