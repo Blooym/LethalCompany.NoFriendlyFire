@@ -1,0 +1,16 @@
+[config]
+schemaVersion = "0.0.1"
+
+[package]
+namespace = "Blooym"
+name = "NoFriendlyFire"
+description = "Disables the ability for teammates to damage each-other while keeping all reliant mechanics working."
+websiteUrl = "https://github.com/Blooym/LethalCompany.NoFriendlyFire"
+
+[package.dependencies]
+BepInEx-BepInExPack = "5.4.2100"
+
+[publish]
+repository = "https://thunderstore.io"
+communities = ["lethal-company"]
+categories = ["Mods", "Server-side", "BepInEx"]

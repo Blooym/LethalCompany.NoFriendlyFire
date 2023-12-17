@@ -1,0 +1,66 @@
+name: Release
+on:
+  release:
+    types: published
+
+jobs:
+  build:
+    name: Release
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - name: Install .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.x
+          cache: true
+
+      - name: Setup SteamCMD
+        uses: CyberAndrii/setup-steamcmd@v1
+
+      - name: Install LethalCompany
+        run: steamcmd +force_install_dir ./lib +login anonymous +app_update 1966720 validate +quit
+
+      - name: Restore Dependencies
+        run: dotnet restore
+
+      - name: Build Project
+        run: dotnet build -c Release
+
+      - name: Install tcli
+        run: dotnet tool install -g tcli
+
+      - name: Deploy to Thunderstore
+        run: |
+          tcli publish `
+          --file ./out/thunderstore.zip `
+          --config-path ./Thunderstore/thunderstore.toml `
+          --token $env:THUNDERSTORE_TOKEN `
+          --repository "https://thunderstore.io"
+        env:
+          THUNDERSTORE_TOKEN: ${{ secrets.THUNDERSTORE_TOKEN }}
+
+      - name: Deploy to GitHub
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: ./out/mod.zip
+          bodyFile: ./CHANGELOG.md
+
+      - name: Upload mod artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mod
+          path: ./bin/Release/net472
+
+      - name: Upload Thunderstore artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: thunderstore-release
+          path: ./Thunderstore
