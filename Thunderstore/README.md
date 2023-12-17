@@ -1,4 +1,4 @@
-﻿# NoFriendlyFire for Lethal Company
+# NoFriendlyFire for Lethal Company
 
 A very simple mod for Lethal Company that sets all incoming damage taken from other players to zero whilst ensuring that mechanics that require friendly fire still function as intended.
 

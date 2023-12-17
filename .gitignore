@@ -5,6 +5,7 @@ lib/**
 # Build Files
 obj/
 bin/
+Thunderstore/*.dll
 
 # IDE
 .idea/
