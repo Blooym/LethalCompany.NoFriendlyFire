@@ -1,5 +1,5 @@
 ﻿# Library files.
-lib/**
+lib/
 !lib/.gitkeep
 
 # Build Files
