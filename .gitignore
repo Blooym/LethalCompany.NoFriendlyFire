@@ -1,8 +1,4 @@
-﻿# Library files.
-lib/
-!lib/.gitkeep
-
-# Build Files
+﻿# Build Files
 obj/
 bin/
 Thunderstore/*.dll
