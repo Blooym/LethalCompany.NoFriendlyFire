@@ -1,6 +1,6 @@
 ﻿{
   "name": "NoFriendlyFire",
-  "version_number": "1.0.0",
+  "version_number": "1.0.1",
   "website_url": "https://codeberg.org/Blooym/LethalCompany.NoFriendlyFire",
   "description": "Disables the ability for teammates to damage each-other while keeping all reliant mechanics working.",
   "dependencies": [
